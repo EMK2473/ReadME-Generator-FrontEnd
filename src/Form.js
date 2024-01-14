@@ -139,7 +139,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("installation")}
               >
-                Add Installation
+                Add Installation Details
               </button>
             </label>
             {buttonStates.installation && (
@@ -163,7 +163,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("usage")}
               >
-                Add Usage
+                Add Usage Details
               </button>
             </label>
             {buttonStates.usage && (
@@ -187,7 +187,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("license")}
               >
-                Add License
+                Add License Details
               </button>
             </label>
             {buttonStates.license && (
@@ -221,7 +221,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("contributions")}
               >
-                Add Contributions
+                Add Contribution Details
               </button>
             </label>
             {buttonStates.contributions && (
@@ -245,7 +245,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("tests")}
               >
-                Add Tests
+                Add Test Details
               </button>
             </label>
             {buttonStates.tests && (
@@ -269,7 +269,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("github")}
               >
-                Add GitHub
+                Add GitHub Username
               </button>
             </label>
             {buttonStates.github && (
@@ -293,7 +293,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("email")}
               >
-                Add Email
+                Add Email Address
               </button>
             </label>
             {buttonStates.email && (
@@ -317,7 +317,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("video")}
               >
-                Add Video
+                Add (URL) Link to Video
               </button>
             </label>
             {buttonStates.video && (
@@ -341,7 +341,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("screenShot")}
               >
-                Add Screenshot
+                Add Path to Screenshot './pathTo/screenShot.jpg''
               </button>
             </label>
             {buttonStates.screenShot && (
