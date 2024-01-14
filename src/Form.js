@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'bulma/css/bulma.min.css';
-import { Generator } from "./generateMarkdown"; // Update the path based on your file structure
+import { Generator } from "./generateMarkdown"; 
 
 const choices = [
   "agpl-3.0",
@@ -47,7 +47,7 @@ const Form = () => {
       [name]: !prevButtonStates[name],
     }));
 
-    // Reset the corresponding form data when the button is clicked
+    // Resets the corresponding form data when the button is clicked
     if (name === "title") {
       setFormData((prevData) => ({ ...prevData, title: "" }));
     } else if (name === "description") {
@@ -82,7 +82,6 @@ const Form = () => {
   };
 
   const generateMarkdownContent = () => {
-    // Use the Generator class to generate the Markdown content
     const generator = new Generator(formData);
     return generator.generateMarkdown(formData);
   };
@@ -106,7 +105,6 @@ const Form = () => {
       <h1 className="title is-1 has-text-centered has-text-white">ReadMe.md Generator</h1>
       <div className="has-text-centered">
         <form onSubmit={handleSubmit} className="box custom-box-shadow" id="form">
-          {/* Repeat similar structure for other form fields */}
           {/* Title */}
           <div className="field">
             <label className="label">
