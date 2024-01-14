@@ -27,7 +27,7 @@ const Form = () => {
     screenShot: "",
   });
 
-  const [checkboxes, setCheckboxes] = useState({
+  const [buttonStates, setButtonStates] = useState({
     title: false,
     description: false,
     installation: false,
@@ -41,10 +41,10 @@ const Form = () => {
     screenShot: false,
   });
 
-  const handleCheckboxChange = (name) => {
-    setCheckboxes((prevCheckboxes) => ({
-      ...prevCheckboxes,
-      [name]: !prevCheckboxes[name],
+  const handleButtonClick = (name) => {
+    setButtonStates((prevButtonStates) => ({
+      ...prevButtonStates,
+      [name]: !prevButtonStates[name],
     }));
   };
 
@@ -55,6 +55,7 @@ const Form = () => {
       [name]: value,
     }));
   };
+
 
   const generateMarkdownContent = () => {
     // Use the Generator class to generate the Markdown content
@@ -78,312 +79,293 @@ const Form = () => {
 
   return (
     <div className="container">
-      <h1 className="title is-1 has-text-centered">ReadMe Generator</h1>
+      <h1 className="title is-1 has-text-centered has-text-white">ReadMe.md Generator</h1>
       <div className="has-text-centered">
-    <form onSubmit={handleSubmit} className="box custom-box-shadow" id="form">
-      {/* Repeat similar structure for other form fields */}
-      {/* Title */}
-      <div className="field">
-        <label className="label">
-
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="titleCheckbox"
-            checked={checkboxes.title}
-            onChange={() => handleCheckboxChange("title")}
-          />
-          Title:
-        </label>
-        {checkboxes.title && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-            />
+        <form onSubmit={handleSubmit} className="box custom-box-shadow" id="form">
+          {/* Repeat similar structure for other form fields */}
+          {/* Title */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.title ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("title")}
+              >
+                Add Title
+              </button>
+            </label>
+            {buttonStates.title && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Description */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="descriptionCheckbox"
-            checked={checkboxes.description}
-            onChange={() => handleCheckboxChange("description")}
-          />
-          Description:
-        </label>
-        {checkboxes.description && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-            />
+          {/* Description */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.description ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("description")}
+              >
+                Add Description
+              </button>
+            </label>
+            {buttonStates.description && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Repeat similar structure for other form fields */}
-      {/* Installation */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="installationCheckbox"
-            checked={checkboxes.installation}
-            onChange={() => handleCheckboxChange("installation")}
-          />
-          Installation Requirements:
-        </label>
-        {checkboxes.installation && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="installation"
-              value={formData.installation}
-              onChange={handleChange}
-            />
+          {/* Installation */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.installation ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("installation")}
+              >
+                Add Installation
+              </button>
+            </label>
+            {buttonStates.installation && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="installation"
+                  value={formData.installation}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Usage */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="usageCheckbox"
-            checked={checkboxes.usage}
-            onChange={() => handleCheckboxChange("usage")}
-          />
-          Application Usage:
-        </label>
-        {checkboxes.usage && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="usage"
-              value={formData.usage}
-              onChange={handleChange}
-            />
+          {/* Usage */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.usage ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("usage")}
+              >
+                Add Usage
+              </button>
+            </label>
+            {buttonStates.usage && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="usage"
+                  value={formData.usage}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* License */}
-      <div className="field">
-  <label className="label">
-    
-    <input
-      className="checkbox"
-      type="checkbox"
-      name="licenseCheckbox"
-      checked={checkboxes.license}
-      onChange={() => handleCheckboxChange("license")}
-    />
-    License:
-  </label>
-  {checkboxes.license && (
-    <div className="control">
-      <div className="select">
-        <select
-          className="input"
-          name="license"
-          value={formData.license}
-          onChange={handleChange}
-        >
-          <option value="" disabled>Select a license</option>
-          {choices.map((choice) => (
-            <option key={choice} value={choice}>
-              {choice}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>
-  )}
-</div>
-
-      {/* Contributions */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="contributionsCheckbox"
-            checked={checkboxes.contributions}
-            onChange={() => handleCheckboxChange("contributions")}
-          />
-          Contributions:
-        </label>
-        {checkboxes.contributions && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="contributions"
-              value={formData.contributions}
-              onChange={handleChange}
-            />
+          {/* License */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.license ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("license")}
+              >
+                Add License
+              </button>
+            </label>
+            {buttonStates.license && (
+              <div className="control">
+                <div className="select">
+                  <select
+                    className="input"
+                    name="license"
+                    value={formData.license}
+                    onChange={handleChange}
+                  >
+                    <option value="" disabled>
+                      Select a license
+                    </option>
+                    {choices.map((choice) => (
+                      <option key={choice} value={choice}>
+                        {choice}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Tests */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="testsCheckbox"
-            checked={checkboxes.tests}
-            onChange={() => handleCheckboxChange("tests")}
-          />
-          Test Commands:
-        </label>
-        {checkboxes.tests && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="tests"
-              value={formData.tests}
-              onChange={handleChange}
-            />
+          {/* Contributions */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.contributions ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("contributions")}
+              >
+                Add Contributions
+              </button>
+            </label>
+            {buttonStates.contributions && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="contributions"
+                  value={formData.contributions}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* GitHub */}
-      <div className="field">
-        <label className="label">
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="githubCheckbox"
-            checked={checkboxes.github}
-            onChange={() => handleCheckboxChange("github")}
-          />
-          GitHub Username:
-        </label>
-        {checkboxes.github && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="github"
-              value={formData.github}
-              onChange={handleChange}
-            />
+          {/* Tests */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.tests ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("tests")}
+              >
+                Add Tests
+              </button>
+            </label>
+            {buttonStates.tests && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="tests"
+                  value={formData.tests}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Email */}
-      <div className="field">
-        <label className="label">
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="emailCheckbox"
-            checked={checkboxes.email}
-            onChange={() => handleCheckboxChange("email")}
-          />
-          Email Address:
-        </label>
-        {checkboxes.email && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
+          {/* GitHub */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.github ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("github")}
+              >
+                Add GitHub
+              </button>
+            </label>
+            {buttonStates.github && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="github"
+                  value={formData.github}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Video */}
-      <div className="field">
-        <label className="label">
-
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="videoCheckbox"
-            checked={checkboxes.video}
-            onChange={() => handleCheckboxChange("video")}
-          />
-        Link to Video Instructions:
-        </label>
-        {checkboxes.video && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="video"
-              value={formData.video}
-              onChange={handleChange}
-            />
+          {/* Email */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.email ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("email")}
+              >
+                Add Email
+              </button>
+            </label>
+            {buttonStates.email && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      {/* Screenshot */}
-      <div className="field">
-        <label className="label">
-          
-          <input
-            className="checkbox"
-            type="checkbox"
-            name="screenShotCheckbox"
-            checked={checkboxes.screenShot}
-            onChange={() => handleCheckboxChange("screenShot")}
-          />
-          Path to Screenshot:
-        </label>
-        {checkboxes.screenShot && (
-          <div className="control">
-            <input
-              className="input"
-              type="text"
-              name="screenShot"
-              value={formData.screenShot}
-              onChange={handleChange}
-            />
+          {/* Video */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.video ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("video")}
+              >
+                Add Video
+              </button>
+            </label>
+            {buttonStates.video && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="video"
+                  value={formData.video}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
           </div>
-        )}
-      </div>
 
-      <div className="field is-grouped is-grouped-centered">
-  <p className="control">
-    <button className="button is-primary" type="submit">
-      Submit
-    </button>
-  </p>
-</div>
-    </form>
-    </div>
+          {/* Screenshot */}
+          <div className="field">
+            <label className="label">
+              <button
+                className={`button ${buttonStates.screenShot ? "is-white" : "is-black"}`}
+                type="button"
+                onClick={() => handleButtonClick("screenShot")}
+              >
+                Add Screenshot
+              </button>
+            </label>
+            {buttonStates.screenShot && (
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  name="screenShot"
+                  value={formData.screenShot}
+                  onChange={handleChange}
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="field is-grouped is-grouped-centered">
+            <p className="control">
+              <button className="button is-primary" type="submit">
+                Submit
+              </button>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
