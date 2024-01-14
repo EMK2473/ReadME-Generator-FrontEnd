@@ -80,12 +80,12 @@ const Form = () => {
     <div className="container">
       <h1 className="title is-1 has-text-centered">ReadMe Generator</h1>
       <div className="has-text-centered">
-    <form onSubmit={handleSubmit} className="box custom-box-shadow">
+    <form onSubmit={handleSubmit} className="box custom-box-shadow" id="form">
       {/* Repeat similar structure for other form fields */}
       {/* Title */}
       <div className="field">
         <label className="label">
-          Title:
+
           <input
             className="checkbox"
             type="checkbox"
@@ -93,6 +93,7 @@ const Form = () => {
             checked={checkboxes.title}
             onChange={() => handleCheckboxChange("title")}
           />
+          Title:
         </label>
         {checkboxes.title && (
           <div className="control">
@@ -110,7 +111,7 @@ const Form = () => {
       {/* Description */}
       <div className="field">
         <label className="label">
-          Description:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -118,6 +119,7 @@ const Form = () => {
             checked={checkboxes.description}
             onChange={() => handleCheckboxChange("description")}
           />
+          Description:
         </label>
         {checkboxes.description && (
           <div className="control">
@@ -136,7 +138,7 @@ const Form = () => {
       {/* Installation */}
       <div className="field">
         <label className="label">
-          Installation Requirements:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -144,6 +146,7 @@ const Form = () => {
             checked={checkboxes.installation}
             onChange={() => handleCheckboxChange("installation")}
           />
+          Installation Requirements:
         </label>
         {checkboxes.installation && (
           <div className="control">
@@ -161,7 +164,7 @@ const Form = () => {
       {/* Usage */}
       <div className="field">
         <label className="label">
-          Application Usage:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -169,6 +172,7 @@ const Form = () => {
             checked={checkboxes.usage}
             onChange={() => handleCheckboxChange("usage")}
           />
+          Application Usage:
         </label>
         {checkboxes.usage && (
           <div className="control">
@@ -186,7 +190,7 @@ const Form = () => {
       {/* License */}
       <div className="field">
   <label className="label">
-    License:
+    
     <input
       className="checkbox"
       type="checkbox"
@@ -194,6 +198,7 @@ const Form = () => {
       checked={checkboxes.license}
       onChange={() => handleCheckboxChange("license")}
     />
+    License:
   </label>
   {checkboxes.license && (
     <div className="control">
@@ -219,7 +224,7 @@ const Form = () => {
       {/* Contributions */}
       <div className="field">
         <label className="label">
-          Contributions:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -227,6 +232,7 @@ const Form = () => {
             checked={checkboxes.contributions}
             onChange={() => handleCheckboxChange("contributions")}
           />
+          Contributions:
         </label>
         {checkboxes.contributions && (
           <div className="control">
@@ -244,7 +250,7 @@ const Form = () => {
       {/* Tests */}
       <div className="field">
         <label className="label">
-          Test Commands:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -252,6 +258,7 @@ const Form = () => {
             checked={checkboxes.tests}
             onChange={() => handleCheckboxChange("tests")}
           />
+          Test Commands:
         </label>
         {checkboxes.tests && (
           <div className="control">
@@ -269,7 +276,6 @@ const Form = () => {
       {/* GitHub */}
       <div className="field">
         <label className="label">
-          GitHub Username:
           <input
             className="checkbox"
             type="checkbox"
@@ -277,6 +283,7 @@ const Form = () => {
             checked={checkboxes.github}
             onChange={() => handleCheckboxChange("github")}
           />
+          GitHub Username:
         </label>
         {checkboxes.github && (
           <div className="control">
@@ -294,7 +301,6 @@ const Form = () => {
       {/* Email */}
       <div className="field">
         <label className="label">
-          Email Address:
           <input
             className="checkbox"
             type="checkbox"
@@ -302,6 +308,7 @@ const Form = () => {
             checked={checkboxes.email}
             onChange={() => handleCheckboxChange("email")}
           />
+          Email Address:
         </label>
         {checkboxes.email && (
           <div className="control">
@@ -319,7 +326,7 @@ const Form = () => {
       {/* Video */}
       <div className="field">
         <label className="label">
-          Link to Video Instructions:
+
           <input
             className="checkbox"
             type="checkbox"
@@ -327,6 +334,7 @@ const Form = () => {
             checked={checkboxes.video}
             onChange={() => handleCheckboxChange("video")}
           />
+        Link to Video Instructions:
         </label>
         {checkboxes.video && (
           <div className="control">
@@ -344,7 +352,7 @@ const Form = () => {
       {/* Screenshot */}
       <div className="field">
         <label className="label">
-          Path to Screenshot:
+          
           <input
             className="checkbox"
             type="checkbox"
@@ -352,6 +360,7 @@ const Form = () => {
             checked={checkboxes.screenShot}
             onChange={() => handleCheckboxChange("screenShot")}
           />
+          Path to Screenshot:
         </label>
         {checkboxes.screenShot && (
           <div className="control">

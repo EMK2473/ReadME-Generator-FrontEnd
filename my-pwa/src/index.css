@@ -1,10 +1,21 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  height: 100%;
+  background-color: black;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
@@ -12,6 +23,22 @@ code {
     monospace;
 }
 
-.custom-box-shadow {
-  box-shadow: 0 0 200px hsla(0, 89%, 50%, 0.945);
+#form {
+  background-color: rgb(44, 139, 171);
+}
+
+/* Add this to your CSS file or style block */
+.field label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.field label {
+  border: 1px solid #000; /* Black border */
+  border-radius: 5px; /* Rounded radius edge */
+  padding: 0.5rem; /* Add padding for spacing */
+}
+
+.field label input.checkbox {
+  margin-right: 0.5rem; /* Add margin to create space between checkbox and label text */
 }
