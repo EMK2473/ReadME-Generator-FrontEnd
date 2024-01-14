@@ -46,6 +46,31 @@ const Form = () => {
       ...prevButtonStates,
       [name]: !prevButtonStates[name],
     }));
+
+    // Reset the corresponding form data when the button is clicked
+    if (name === "title") {
+      setFormData((prevData) => ({ ...prevData, title: "" }));
+    } else if (name === "description") {
+      setFormData((prevData) => ({ ...prevData, description: "" }));
+    } else if (name === "installation") {
+      setFormData((prevData) => ({ ...prevData, installation: "" }));
+    } else if (name === "usage") {
+      setFormData((prevData) => ({ ...prevData, usage: "" }));
+    } else if (name === "license") {
+      setFormData((prevData) => ({ ...prevData, license: "" }));
+    } else if (name === "contributions") {
+      setFormData((prevData) => ({ ...prevData, contributions: "" }));
+    } else if (name === "tests") {
+      setFormData((prevData) => ({ ...prevData, tests: "" }));
+    } else if (name === "github") {
+      setFormData((prevData) => ({ ...prevData, github: "" }));
+    } else if (name === "email") {
+      setFormData((prevData) => ({ ...prevData, email: "" }));
+    } else if (name === "video") {
+      setFormData((prevData) => ({ ...prevData, video: "" }));
+    } else if (name === "screenShot") {
+      setFormData((prevData) => ({ ...prevData, screenShot: "" }));
+    }
   };
 
   const handleChange = (e) => {
@@ -55,7 +80,6 @@ const Form = () => {
       [name]: value,
     }));
   };
-
 
   const generateMarkdownContent = () => {
     // Use the Generator class to generate the Markdown content
