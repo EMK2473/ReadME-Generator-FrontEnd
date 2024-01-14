@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import 'bulma/css/bulma.min.css';
+import { Generator } from "./generateMarkdown"; // Update the path based on your file structure
 
 const choices = [
-    "agpl-3.0",
-    "mpl-2.0",
-    "apache-2.0",
-    "mit",
-    "bsl-1.0",
-    "unlicense",
-    "none",
-  ]
+  "agpl-3.0",
+  "mpl-2.0",
+  "apache-2.0",
+  "mit",
+  "bsl-1.0",
+  "unlicense",
+  "none",
+];
+
 const Form = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -54,10 +56,24 @@ const Form = () => {
     }));
   };
 
+  const generateMarkdownContent = () => {
+    // Use the Generator class to generate the Markdown content
+    const generator = new Generator(formData);
+    return generator.generateMarkdown(formData);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    // You can use the formData state to send data to your server or perform other actions
+
+    // Generate the Markdown content
+    const markdownContent = generateMarkdownContent();
+
+    // Write the Markdown content to a readme.md file
+    const blob = new Blob([markdownContent], { type: "text/plain" });
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "readme.md";
+    link.click();
   };
 
   return (
