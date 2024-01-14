@@ -341,7 +341,7 @@ const Form = () => {
                 type="button"
                 onClick={() => handleButtonClick("screenShot")}
               >
-                Add Path to Screenshot './pathTo/screenShot.jpg''
+                Add ./pathTo/screenShot.png
               </button>
             </label>
             {buttonStates.screenShot && (
