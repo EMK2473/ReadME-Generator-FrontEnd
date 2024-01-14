@@ -27,20 +27,20 @@ code {
   background-color: rgb(44, 139, 171);
 }
 
-/* Add this to your CSS file or style block */
 .field label {
   display: block;
   margin-bottom: 0.5rem;
 }
 
 .field label {
-  border: 1px solid #000; /* Black border */
-  border-radius: 5px; /* Rounded radius edge */
-  padding: 0.5rem; /* Add padding for spacing */
+  border: 1px solid #000;
+  border-radius: 5px; 
+  padding: 0.5rem; 
 }
 
+
 .field label input.checkbox {
-  margin-right: 0.5rem; /* Add margin to create space between checkbox and label text */
+  margin-right: 0.5rem; 
 }
 
 @media screen and (min-width: 768px) {

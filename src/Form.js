@@ -66,14 +66,14 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Generate the Markdown content
+    // Generate the Markdown content on submit
     const markdownContent = generateMarkdownContent();
 
-    // Write the Markdown content to a readme.md file
+    // Write the Markdown content to a README.md file
     const blob = new Blob([markdownContent], { type: "text/plain" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "readme.md";
+    link.download = "README.md";
     link.click();
   };
 
